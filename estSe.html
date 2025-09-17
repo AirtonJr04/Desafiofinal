@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Repositório de Atividades - Desenvolvimento Web</title>
+<link rel="stylesheet" href="css/config.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <h1 class="titulo">Estruturas Condicionais - Se</h1>
+
+  
+  <nav class="menu-lateral">
+    <div class="btn-expandir">
+      <i class="bi bi-list"></i>
+    </div>
+
+    <ul>
+      <li class="item-menu">
+        <a href="index.html">
+          <span class="icon"></span>
+          <span class="txt-link">Início</span>
+        </a>
+      </li>
+
+      <li class="item-menu">
+        <a href="#">
+          <span class="icon"></span>
+          <span class="txt-link">Estruturas Condicionais</span>
+        </a>
+        <ul>
+          <li class="item-sobmenu">
+            <a href="estSe.html">Estrutura Se</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="estCaso.html">Estrutura Caso</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-menu">
+        <a href="#">
+          <span class="icon"></span>
+          <span class="txt-link">Estruturas de Repetição</span>
+        </a>
+        <ul>
+          <li class="item-sobmenu">
+            <a href="estEnquanto.html">Estrutura Enquanto</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="estFacaEnquanto.html">Estrutura Faça...Enquanto</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="estPara.html">Estrutura Para</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-menu">
+        <a href="#">
+          <span class="icon"></span>
+          <span class="txt-link">Vetores</span>
+        </a>
+        <ul>
+          <li class="item-sobmenu">
+            <a href="vetor.html">Vetor</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="matriz.html">Matriz</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+ 
+  <main>
+    <section class="conteudo">
+
+      
+      <div class="caixa texto">
+        <h2>Sobre a Estrutura Se (if)</h2>
+        <p>
+          A condicional if é uma estrutura condicional que executa a afirmação, dentro do bloco, 
+          se determinada condição for verdadeira. Se for falsa, executa as afirmações dentro de else.
+        </p>
+      </div>
+
+      
+      <div class="caixa botoes">
+        <h2>Atividades</h2>
+
+        
+        <div class="atividade">
+          <button onclick="toggleEnunciado('a1')">Atividade 1</button>
+          
+          <div class="enunciado-texto" style="display:inline-block; 
+              background-color: rgba(255,255,255,0.1); 
+              padding:10px; border-radius:6px; margin-left:10px; width:300px; vertical-align:top;">
+            <p>Enunciado: Desenvolva uma aplicação web que, a partir de 3 notas de um aluno, informadas pelo usuário,
+               calcule a sua média e de acordo com a mesma emita a situação do aluno: "Aprovado", "Recuperação" ou "Reprovado".
+                Lembrando que a média para aprovação é a de 7 ou maior e entre 5 e 6,9 o aluno está em recuperação e abaixo disso, reprovado.</p>
+          </div>
+        
+          <div id="a1" class="enunciado">
+            <textarea id="desafioSe" name="desafioSe" rows="20" cols="110">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title> Estrutura SE JavaScript</title>
+<style>
+
+section{ margin-top: 0px auto; }
+.cadmedialuno1{ width: 300px; margin: 0px auto; font-weight: bold; margin-bottom: 10px; }
+.cadmedialuno1 input{ margin: 5px auto; width: 100%; padding: 5px 0; }
+.cadmedialuno1 button{ width: 30%; margin: 0 10%; background-color: #b1ccf5; font-weight: bold; font-size: 16px; }
+label{ float: left; }
+h2{ text-align: center; margin-top: 0px; margin-bottom: 10px; font-size: 50px; }
+</style>
+</head>
+<body>
+<section>
+<h2>Atividade - Cálculo média de aluno - Estrutura condicional "se"(if)</h2>
+<font face = "arial">
+<form name="frmnotas" action="#" method="get" onsubmit="return procFormulario()">
+<fieldset class="cadmedialuno1">
+<legend>Entrada de dados</legend><br>
+<label for="num1">Nota 1:</label>
+<input type="text" name="txtnum1" id="num1"><br><br>
+<label for="num2">Nota 2:</label>
+<input type="text" name="txtnum2" id="num2"><br><br>
+<label for="num3">Nota 3:</label>
+<input type="text" name="txtnum3" id="num3"><br>
+<button type="reset">Limpar</button><button type="submit">Enviar</button>
+</fieldset>
+</form>
+</font>
+</section>
+<script>
+function procFormulario(){
+if(document.frmnotas.txtnum1.value==""){
+alert("Preencha o campo Nota 1")
+document.frmnotas.txtnum1.focus()
+return false;
+}else if(document.frmnotas.txtnum2.value==""){
+alert("Preencha o campo Nota 2")
+document.frmnotas.txtnum2.focus()
+return false;
+}else if(document.frmnotas.txtnum3.value==""){
+alert("Preencha o campo Nota 3")
+document.frmnotas.txtnum3.focus()
+return false; 
+}else{
+let nota1 = parseFloat(document.getElementById('num1').value);
+let nota2 = parseFloat(document.getElementById('num2').value);
+let nota3 = parseFloat(document.getElementById('num3').value);
+let media = (nota1+nota2+nota3)/3;
+if(media>=7){
+alert("Sua média foi "+ media.toFixed(2) + " Você foi aprovado")
+}else if(media>=5.0){
+alert("Sua média foi "+ media.toFixed(2) + " Você está em recuperação")
+}else {
+alert("Sua média foi "+ media.toFixed(2) + " Você foi reprovado")
+} 
+}            
+}
+</script>
+</body>
+</html>
+            </textarea>
+            <button class="btn-codigo" onclick="document.write(desafioSe.value);">Testar</button>
+          </div>
+        </div>
+
+        
+        <div class="atividade">
+          <button onclick="toggleEnunciado('a2')">Atividade 2</button>
+          
+          <div class="enunciado-texto" style="display:inline-block; 
+              background-color: rgba(255,255,255,0.1); 
+              padding:10px; border-radius:6px; margin-left:10px; width:300px; vertical-align:top;">
+            <p>Enunciado: Desenvolva uma aplicação web para ler dois números por exemplo: numero1 e numero 2.
+               Em seguida, diga se o numero1 > numero 2 ou se numero2 > numero1 ou ainda se numero 1 = numero2</p>
+          </div>
+        
+          <div id="a2" class="enunciado">
+            <textarea id="desafioSe2" name="desafioSe2" rows="20" cols="110">
+              &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+
+    &lt;head&gt;
+
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt; Estrutura SE JavaScript&lt;/title&gt;
+        &lt;style&gt;/*Configura&ccedil;&otilde;es gerais*/
+
+            section{
+            
+                margin-top: 0px auto;
+            }
+            
+            /*Configura&ccedil;&otilde;es da p&aacute;gina*/
+            
+            .cadmedialuno1{
+            
+                width: 300px;
+                margin: 0px auto;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            
+            .cadmedialuno1 input{
+            
+                margin: 5px auto;
+                width: 100%;
+                padding: 5px 0;
+            }
+            
+            .cadmedialuno1 button{
+            
+                width: 30%;
+                margin: 0 10%;
+                background-color: #b1ccf5;
+                font-weight: bold;
+                font-size: 16px;
+            }
+            
+            label{
+            
+                float: left;
+            }
+            
+            h2{
+            
+                text-align: center;
+                margin-top: 0px;
+                margin-bottom: 10px;
+                font-size: 50px;
+            }&lt;/style&gt;
+
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+
+            &lt;h2&gt;Atividade - Ler 2 n&uacute;meros...Estrutura condicional &quot;se&quot;(if)&lt;/h2&gt;
+            &lt;font face = &quot;arial&quot;&gt;
+
+                &lt;form name=&quot;frmnotas&quot; action=&quot;#&quot; method=&quot;get&quot; onsubmit=&quot;return procFormulario()&quot;&gt;
+
+                    &lt;fieldset class=&quot;cadmedialuno1&quot;&gt;
+
+                        &lt;legend&gt;Entrada de dados&lt;/legend&gt;
+                        &lt;br&gt;
+                        &lt;label for=&quot;num1&quot;&gt;N&uacute;mero 1:&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; name=&quot;txtnum1&quot; id=&quot;num1&quot;&gt;
+                        &lt;br&gt;&lt;br&gt;
+                        &lt;label for=&quot;num2&quot;&gt;N&uacute;mero 2:&lt;/label&gt;
+                        &lt;input type=&quot;text&quot; name=&quot;txtnum2&quot; id=&quot;num2&quot;&gt;
+                        &lt;br&gt;
+                        &lt;button type=&quot;reset&quot;&gt;Limpar&lt;/button&gt;&lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+
+                    &lt;/fieldset&gt;
+                &lt;/form&gt;
+            &lt;/font&gt;
+        &lt;/section&gt;
+        &lt;script&gt;function procFormulario(){
+
+            //Valida&ccedil;&atilde;o de campos
+            if(document.frmnotas.txtnum1.value==&quot;&quot;){
+        
+                alert(&quot;Preencha o campo N&uacute;mero 1&quot;)
+                document.frmnotas.txtnum1.focus()
+                return false;
+        
+               }else if(document.frmnotas.txtnum2.value==&quot;&quot;){
+        
+                        alert(&quot;Preencha o campo N&uacute;mero 2&quot;)
+                        document.frmnotas.txtnum2.focus()
+                        return false;
+        
+                            }else{
+        
+                                //Processamento do programa...
+                                //&quot;let&quot; &eacute; uma diretiva para declarar uma vari&aacute;vel
+                                let num1 = parseFloat(document.getElementById('num1').value);
+                                let num2 = parseFloat(document.getElementById('num2').value);
+                                if(num1 &gt; num2){
+        
+                                    alert(&quot;N&uacute;mero 1 &eacute; maior que o n&uacute;mero 2&quot;)
+        
+                                }else if(num2 &gt; num1){
+        
+                                    alert(&quot;N&uacute;mero 2 &eacute; maior que o n&uacute;mero 1&quot;)
+        
+                                }else {
+        
+                                    alert(&quot;N&uacute;mero 1 e N&uacute;mero 2 s&atilde;o iguais&quot;)
+                                } 
+                            }            
+        }&lt;/script&gt;
+    &lt;/body&gt;
+
+&lt;/html&gt;
+            </textarea>
+            <button class="btn-codigo" onclick="document.write(desafioSe2.value);">Testar</button>
+          </div>
+        </div>
+
+
+        <script src="js/validaproc.js"></script>
+</body>
+</html>

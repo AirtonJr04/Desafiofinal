@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+
+body {
+  background-image: url(../img/planodefundo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  background-attachment: fixed;
+
+}
+
+
+.titulo {
+  text-align: center;
+  margin-top: 120px;
+  font-size: 40px;
+}
+
+
+.explicacao {
+  font-size: 22px;
+  text-align: center;
+  margin: 160px 15%;
+  line-height: 1.6; 
+  margin-left: 300px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+nav.menu-lateral {
+  width: 70px;
+  height: 100%;
+  background-color: black;
+  padding: 40px 0 40px 1%;
+  box-shadow: 3px 0 0 rgb(247, 38, 10);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: .2s;
+}
+
+nav.menu-lateral:hover {
+  width: 300px;
+}
+
+
+.btn-expandir {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.btn-expandir > i {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+ul li.item-menu {
+  transition: .2s;
+}
+
+ul li.item-menu:hover {
+  background: rgb(255, 30, 0);
+}
+
+ul li.item-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 20px 4%;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 60px;
+}
+
+
+ul li.item-sobmenu {
+  background: rgb(30, 30, 30);
+  margin-left: 60px;
+}
+
+ul li.item-sobmenu:hover {
+  background: rgb(121, 8, 0);
+}
+
+ul li.item-sobmenu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px 4%;
+  display: block;
+}
+
+
+.conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; 
+  margin: 50px 100px;
+}
+
+
+.caixa {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 200px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+
+.caixa.texto p {
+  width: 400px;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+.caixa.botoes {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.caixa.botoes button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgb(248, 101, 81);
+  color: white;
+  transition: 0.3s;
+}
+
+.caixa.botoes button:hover {
+  background-color: rgb(247, 38, 10);
+}
+
+.atividade {
+  margin-bottom: 20px;
+}
+
+.enunciado {
+  display: none; 
+  background-color: rgba(255,255,255,0.1);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.btn-codigo {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgb(0, 123, 255);
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-codigo:hover {
+  background-color: rgb(0, 86, 179);
+}
+
+.atividade {
+  margin-bottom: 20px;
+}
+
+.enunciado {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 6px;
+}
+
+.enunciado-texto {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.1);
+  padding: 10px;
+  border-radius: 6px;
+  margin-left: 10px;
+  width: 300px;
+  vertical-align: top;
+}
+
+

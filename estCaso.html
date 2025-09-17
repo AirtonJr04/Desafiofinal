@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Repositório de Atividades - Desenvolvimento Web</title>
+<link rel="stylesheet" href="css/config.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <h1 class="titulo">Estruturas Condicionais - Caso</h1>
+
+ 
+  <nav class="menu-lateral">
+    <div class="btn-expandir">
+      <i class="bi bi-list"></i>
+    </div>
+
+    <ul>
+      <li class="item-menu">
+        <a href="index.html">
+          <span class="icon"></span>
+          <span class="txt-link">Início</span>
+        </a>
+      </li>
+
+      <li class="item-menu">
+        <a href="#">
+          <span class="icon"></span>
+          <span class="txt-link">Estruturas Condicionais</span>
+        </a>
+        <ul>
+          <li class="item-sobmenu">
+            <a href="estSe.html">Estrutura Se</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="estCaso.html">Estrutura Caso</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-menu">
+        <a href="#">
+          <span class="icon"></span>
+          <span class="txt-link">Estruturas de Repetição</span>
+        </a>
+        <ul>
+          <li class="item-sobmenu">
+            <a href="estEnquanto.html">Estrutura Enquanto</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="estFacaEnquanto.html">Estrutura Faça...Enquanto</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="estPara.html">Estrutura Para</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="item-menu">
+        <a href="#">
+          <span class="icon"></span>
+          <span class="txt-link">Vetores</span>
+        </a>
+        <ul>
+          <li class="item-sobmenu">
+            <a href="vetor.html">Vetor</a>
+          </li>
+          <li class="item-sobmenu">
+            <a href="matriz.html">Matriz</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  
+  <main>
+    <section class="conteudo">
+
+      
+      <div class="caixa texto">
+        <h2>Sobre a Estrutura Caso (switch-case)</h2>
+        <p>
+          A estrutura escolha-caso (ou switch-case, em inglês) é um comando condicional que permite
+           ao programa selecionar e executar um bloco de código específico dentre várias opções, com 
+           base no valor de uma variável ou expressão de teste.
+        </p>
+      </div>
+
+      
+      <div class="caixa botoes">
+        <h2>Atividades</h2>
+
+        
+        <div class="atividade">
+          <button onclick="toggleEnunciado('a1')">Atividade 1</button>
+          
+          <div class="enunciado-texto" style="display:inline-block; 
+              background-color: rgba(255,255,255,0.1); 
+              padding:10px; border-radius:6px; margin-left:10px; width:300px; vertical-align:top;">
+            <p>Enunciado: Desenvolva uma aplicação que com base na idade informada,
+               consiga informar se a pessoa é um: Bebê, criança ou adolescente.</p>
+          </div>
+        
+          <div id="a1" class="enunciado">
+            <textarea id="desafioSe" name="desafioSe" rows="20" cols="110">
+              <!DOCTYPE html>
+
+              <html lag="pt-BR">
+              
+                  <head>
+                       <meta charset="UTF-8">
+                       <title> Estrutura CASO JavaScript - Atividade 1</title>
+                       <style>
+                        
+              
+              section{
+              
+              margin-top: 0px auto;
+              }
+              
+              
+              
+              .cadnumint{
+              
+              width: 300px;
+              margin: 0px auto;
+              font-weight: bold;
+              margin-bottom: 10px;
+              }
+              
+              .cadnumint input{
+              
+              margin: 5px auto;
+              width: 100%;
+              padding: 5px 0;
+              }
+              
+              .cadnumint button{
+              
+              width: 30%;
+              margin: 0 10%;
+              background-color: #b1ccf5;
+              font-weight: bold;
+              font-size: 16px;
+              }
+              
+              label{
+              
+              float: left;
+              }
+              
+              h2{
+              
+              text-align: center;
+              margin-top: 0px;
+              margin-bottom: 10px;
+              font-size: 50px;
+              }
+                       </style>
+                  </head>
+                  <body>
+                      <section>
+              
+                          <h2>Estruturas caso (Switch() - Atividade 1)</h2>
+                          <font face = "arial">
+              
+                            <form name="frmnumint" action="#" method="get" onsubmit="return procFormulario()">
+              
+                              <fieldset class="cadnumint">
+              
+                                  <legend> Entrada de dados</legend>
+                                  <br>
+                                  <label for="numint"> Informe um número inteiro: </label>
+                                  <input type="text" name="txtnumint" id="numint">
+                                  <br><br>
+                                  <button type="reset">limpar</button><button type="submit">Enviar</button>
+                              </fieldset>
+                            </form>
+                          </font>
+                      </section>
+                      <script>
+                        function procFormulario(){
+                  if(document.frmnumint.txtnumint.value==""){
+                      alert("Preencha o campo número inteiro");
+                      document.frmnumint.focus();
+                      return false;
+                  }else{
+                          let numint=parseInt(document.getElementById('numint').value);
+                          switch(true)
+                          {
+                              case(numint>=0 && numint<=3):
+              
+                                   console.log("Bebê");
+                                   return false;
+                              break;
+                              case(numint>=4 && numint<=10):
+              
+                                   console.log("Criança");
+                                   return false;
+                              break;
+                              case(numint>=11 && numint<=18):
+              
+                                   console.log("Adolescente");
+                                   return false;
+                              break; 
+                              default:
+                                  
+                                   console.log("Adulto");
+                                   return false;
+                              break; 
+              
+              
+                          }
+                  }
+              }
+                      </script>
+                  </body>
+              </html>
+            </textarea>
+            <button class="btn-codigo" onclick="document.write(desafioSe.value);">Testar</button>
+          </div>
+        </div>
+
+        
+        <div class="atividade">
+          <button onclick="toggleEnunciado('a2')">Atividade 2</button>
+          
+          <div class="enunciado-texto" style="display:inline-block; 
+              background-color: rgba(255,255,255,0.1); 
+              padding:10px; border-radius:6px; margin-left:10px; width:300px; vertical-align:top;">
+            <p>Enunciado: Desenvolva a aplicação de uma calculadora simples.</p>
+          </div>
+        
+          <div id="a2" class="enunciado">
+            <textarea id="desafioSe2" name="desafioSe2" rows="20" cols="110">
+              &lt;!DOCTYPE html&gt;
+
+&lt;html lag=&quot;pt-BR&quot;&gt;
+
+    &lt;head&gt;
+         &lt;meta charset=&quot;UTF-8&quot;&gt;
+         &lt;title&gt; Estrutura CASO JavaScript - Atividade 1&lt;/title&gt;
+         &lt;style&gt;
+          /*Configura&ccedil;&otilde;es gerais*/
+
+section{
+
+margin-top: 0px auto;
+}
+
+/*Configura&ccedil;&otilde;es da p&aacute;gina*/
+
+.cadnumint{
+
+width: 300px;
+margin: 0px auto;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.cadnumint input{
+
+margin: 5px auto;
+width: 100%;
+padding: 5px 0;
+}
+
+.cadnumint button{
+
+width: 30%;
+margin: 0 10%;
+background-color: #b1ccf5;
+font-weight: bold;
+font-size: 16px;
+}
+
+label{
+
+float: left;
+}
+
+h2{
+
+text-align: center;
+margin-top: 0px;
+margin-bottom: 10px;
+font-size: 50px;
+}
+         &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section&gt;
+
+            &lt;h2&gt;Estruturas CASO (Switch() - Atividade 2)&lt;/h2&gt;
+            &lt;font face = &quot;arial&quot;&gt;
+
+              &lt;form name=&quot;frmnumint&quot; action=&quot;#&quot; method=&quot;get&quot; onsubmit=&quot;return procFormulario()&quot;&gt;
+
+                &lt;fieldset class=&quot;cadnumint&quot;&gt;
+
+                    &lt;legend&gt; Entrada de dados&lt;/legend&gt;
+                    &lt;br&gt;
+                    &lt;label for=&quot;num1&quot;&gt; Informe o primeiro n&uacute;mero inteiro: &lt;/label&gt;
+                    &lt;input type=&quot;text&quot; name=&quot;txtnumint1&quot; id=&quot;numint1&quot;&gt;
+                    &lt;br&gt;&lt;br&gt;
+                    &lt;label for=&quot;num2&quot;&gt; Informe o segundo n&uacute;mero inteiro: &lt;/label&gt;
+                    &lt;input type=&quot;text&quot; name=&quot;txtnumint2&quot; id=&quot;numint2&quot;&gt;
+                    &lt;br&gt;&lt;br&gt;
+                    &lt;label for=&quot;num3&quot;&gt; Informe a opera&ccedil;&atilde;o (1-Soma, 2-Subtra&ccedil;&atilde;o, 3-Multiplica&ccedil;&atilde;o, 4-Divis&atilde;o): &lt;/label&gt;
+                    &lt;input type=&quot;text&quot; name=&quot;txtnumint3&quot; id=&quot;numint3&quot;&gt;
+                    &lt;br&gt;&lt;br&gt;
+                    &lt;button type=&quot;reset&quot;&gt;limpar&lt;/button&gt;&lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;
+                &lt;/fieldset&gt;
+              &lt;/form&gt;
+            &lt;/font&gt;
+        &lt;/section&gt;
+        &lt;script&gt;
+          function procFormulario(){
+
+
+if(document.getElementById('numint1').value==&quot;&quot;){
+     
+     alert(&quot;Preencha o campo (Primeiro n&uacute;mero inteiro):&quot;);
+     document.frmcalc.numint1.focus();
+     return false;
+
+     } else if(document.getElementById('numint2').value==&quot;&quot;){
+               alert(&quot;Preencha o campo (Segundo n&uacute;mero inteiro):&quot;);
+               document.frmcalc.numint2.focus();
+               return false;
+
+               } else if(document.getElementById('numint3').value==&quot;&quot;){
+                alert(&quot;Preencha de Opera&ccedil;&atilde;o:&quot;);
+               document.frmcalc.numint3.focus();
+               return false;
+               
+                         }else{
+                              let num1 = parseInt(document.getElementById('numint1').value);
+                              let num2 = parseInt(document.getElementById('numint2').value);
+                              let num3 = parseInt(document.getElementById('numint3').value);
+                              let result = 0
+
+                              switch(true){
+
+                              case(num3 == 1):
+                                   result = num1 + num2;
+                                   console.log(&quot;Resultado = &quot; + result);
+                                   return false;
+                                   break;
+
+                              case(num3 == 2):
+                                   result = num1 - num2;
+                                   console.log(&quot;Resultado = &quot; + result);
+                                   return false;
+                                   break;
+
+                              case(num3 == 3):
+                                   result = num1 * num2;
+                                   console.log(&quot;Resultado = &quot; + result);
+                                   return false;
+                                   break;
+
+                              case(num3 == 4):
+                                   if(num2 == 0){
+                                   alert(&quot;N&atilde;o &eacute; poss&iacute;vel dividir por 0: &quot;)
+                                   document.frmcalc.numint2.focus();
+                                   }else{
+                                   result = num1 / num2;
+                                   console.log(&quot;Resultado = &quot; + result);
+                                   return false;
+                                   }
+                                   break;
+
+                              default:
+                                   alert(&quot;Digite uma op&ccedil;&atilde;o v&aacute;lida!&quot;)
+                                   document.frmcalc.numint3.focus()
+                                   return false;
+                                   break;
+                              }
+                         }
+}
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+            </textarea>
+            <button class="btn-codigo" onclick="document.write(desafioSe2.value);">Testar</button>
+          </div>
+        </div>
+
+    </section>
+  </main>
+
+  <script src="js/validaproc.js"></script>
+</body>
+</html>
